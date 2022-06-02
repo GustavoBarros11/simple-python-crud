@@ -3,7 +3,7 @@ This is my implementation of the last project of the Curso em Video's Python 3 C
 From Curso em Video<br/>
 **Python Project**
 
-![jpg](../imgs/simple_python_crud.jpg)
+![jpg](imgs/simple_python_crud.png)
 
 This project is a challenge proposed within the Python 3 course of the 'Curso em Video'. In this project my objective was to create a CRUD system that runs inside the command prompt, the app needed to be able to manage user registration, user removal and so on.
 
