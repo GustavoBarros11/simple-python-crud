@@ -1,3 +1,4 @@
+import os
 import stdiomask as stdiomask
 from time import sleep
 
@@ -30,7 +31,8 @@ def signup_menu():
 
 def signup_logic(username, password):
     try:
-        with open('/home/gustavos/Python3/SCRU/data.txt', 'a+') as file:
+        pwd = os.getcwd()
+        with open(f'{pwd}/data.txt', 'a+') as file:
             file.write('{},{}\n'.format(username, password))
             print("Signed In Successfully. Please, now login.")
             sleep(2)
@@ -39,7 +41,8 @@ def signup_logic(username, password):
 
 def search_user(username, password):
     try:
-        with open('/home/gustavos/Python3/SCRU/data.txt', 'r+') as file:
+        pwd = os.getcwd()
+        with open(f'{pwd}/data.txt', 'r+') as file:
             for raw_line in file:
                 temp_username = raw_line.split(',')[0]
 

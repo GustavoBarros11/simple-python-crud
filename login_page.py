@@ -1,3 +1,4 @@
+import os
 import stdiomask
 from time import sleep
 
@@ -71,7 +72,9 @@ def login(username, password):
 
 def search_user(username, password):
     try:
-        with open('/home/gustavos/Python3/SCRU/data.txt', 'r+') as file:
+        pwd = os.getcwd()
+
+        with open(f'{pwd}/data.txt', 'r+') as file:
             for raw_line in file:
                 line = raw_line.strip().split(',')
 
@@ -87,9 +90,11 @@ def search_user(username, password):
 
                 
 def change_user(username=None, password=None, delete=False):
-    with open("/home/gustavos/Python3/SCRU/data.txt", "r") as f:
+    pwd = os.getcwd()
+
+    with open(f'{pwd}/data.txt', "r") as f:
         lines = f.readlines()
-    with open("/home/gustavos/Python3/SCRU/data.txt", "w") as f:
+    with open(f'{pwd}/data.txt', "w") as f:
         for line in lines:
             if delete:
                 if line.strip("\n").split(",")[0] != username:
@@ -109,7 +114,8 @@ def change_user(username=None, password=None, delete=False):
 
 def all_users():
     try:
-        with open('/home/gustavos/Python3/SCRU/data.txt', 'r+') as file:
+        pwd = os.getcwd()
+        with open(f'{pwd}/data.txt', 'r+') as file:
             i = 1
             for line in file:
                 print("[{}] Username: {}".format(i, line.strip().split(",")[0]))
